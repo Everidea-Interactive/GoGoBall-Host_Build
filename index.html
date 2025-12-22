@@ -24,17 +24,13 @@
 
         document.body.style.textAlign = "left";
       }
-      window.addEventListener('error', function(e) {
-          if (e.message.includes('undefined')) {
-              console.error("Ditemukan panggilan URL undefined! Periksa variabel serverUrl di Unity Inspector.");
-          }
-      }, true);
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         arguments: [],
         dataUrl: "Build/GoGoBallHost.data",
         frameworkUrl: "Build/GoGoBallHost.framework.js",
         codeUrl: "Build/GoGoBallHost.wasm",
-      streamingAssetsUrl: "",
+        streamingAssetsUrl: "StreamingAssets",
         companyName: "EverideaInteractive",
         productName: "GoGoBallHost",
         productVersion: "0.1.0",
